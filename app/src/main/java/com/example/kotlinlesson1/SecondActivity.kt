@@ -3,6 +3,7 @@ package com.example.kotlinlesson1
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_second.*
 
 class SecondActivity : AppCompatActivity() {
 
@@ -15,7 +16,9 @@ class SecondActivity : AppCompatActivity() {
 
         if (username == null && password == null) {
             UiManager.showToast(this, "Intent is null")
+        } else {
+            val msg = "Username: $username \n Password: $password"
+            text_tv.text = msg
         }
-
     }
 }
