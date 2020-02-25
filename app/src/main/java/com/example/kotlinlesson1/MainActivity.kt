@@ -38,8 +38,4 @@ class MainActivity : AppCompatActivity() {
         )
         else UiManager.showToast(this, "ERROR")
     }
-
-    private fun neededText(): String {
-        return "High"
-    }
 }
