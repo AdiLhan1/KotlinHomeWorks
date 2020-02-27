@@ -2,7 +2,6 @@ package com.example.kotlinlesson1
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -29,10 +28,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkUserDate(username: String, password: String) {
-        if (nameList[3] == username && passList[2] == password) {
-            UiManager.showToast(this,"You win 1000 $ ")
-        } else {
-            if (nameList.contains(username) && passList.contains(password)) startActivity(
+        if (nameList[3] == username && passList[2] == password) UiManager.showToast(
+            this,
+            "You win 1000 $ "
+        ) else if (nameList.contains(username) && passList.contains(password)) {
+            startActivity(
                 Intent(
                     this,
                     SecondActivity::class.java
@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
                     .putExtra("password", password)
                     .putExtra("username", username)
             )
-            else UiManager.showToast(this, "ERROR")
-        }
+        } else UiManager.showToast(this, "ERROR")
     }
 }
